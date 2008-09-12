@@ -101,7 +101,7 @@ subscribeSamples gi =
 sampleurls = 
     ["http://soundofhistory.complete.org/files_soh/podcast.xml",
      "http://www.thelinuxlink.net/tllts/tllts.rss",
-     "http://www.itconversations.com/rss/recentWithEnclosures.php",
+     "http://feeds.conversationsnetwork.org/channel/itc",
      "http://www.sciam.com/podcast/sciam_podcast_r.xml",
      "http://www.npr.org/rss/podcast.php?id=510019",
      "http://amateurtraveler.com/podcast/rss.xml",
