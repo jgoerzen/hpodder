@@ -10,7 +10,7 @@ Vcs-Git: git://git.complete.org/hpodder
 
 Package: hpodder
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${haskell:Depends}, curl, id3v2
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${haskell:Depends}, curl, python-mutagen
 Description: Tool to scan and download podcasts (podcatcher)
  Podcasting is a method of publishing radio-like programs on the
  Internet.  Through podcasting, almost anyone can produce their own
