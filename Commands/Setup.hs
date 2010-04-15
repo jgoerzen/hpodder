@@ -104,7 +104,7 @@ sampleurls =
      "http://feeds.conversationsnetwork.org/channel/itc",
      "http://www.sciam.com/podcast/sciam_podcast_r.xml",
      "http://www.npr.org/rss/podcast.php?id=510019",
-     "http://amateurtraveler.com/podcast/rss.xml",
+     "http://feeds.feedburner.com/AmateurTravelerPodcast",
      "http://broadband.wgbh.org/amex/rss/podcast_np.xml",
      "http://www.npr.org/rss/podcast.php?id=700000"]
 
