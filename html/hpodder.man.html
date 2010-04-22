@@ -1,0 +1,2898 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>hpodder</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Using the hpodder podcast aggregator"
+HREF="hpodder.html"><LINK
+REL="UP"
+TITLE="hpodder Manual"
+HREF="r9.html"><LINK
+REL="PREVIOUS"
+TITLE="hpodder Manual"
+HREF="r9.html"><LINK
+REL="NEXT"
+TITLE="Index"
+HREF="ch.index.html"><STYLE
+TYPE="text/css"
+>.synopsis, .classsynopsis {
+    background: #eeeeee;
+    border: solid 1px #aaaaaa;
+    padding: 0.5em;
+}
+.programlisting {
+    background: #eeeeff;
+    border: solid 1px #aaaaff;
+    padding: 0.5em;
+}
+.variablelist {
+    padding: 4px;
+    margin-left: 3em;
+}
+.navigation {
+    background: #ffeeee;
+    border: solid 1px #ffaaaa;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.navigation a {
+    color: #770000;
+}
+.navigation a:visited {
+    color: #550000;
+}
+.navigation .title {
+    font-size: 200%;
+}</STYLE
+></HEAD
+><BODY
+CLASS="REFENTRY"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><TABLE
+WIDTH="100%"
+CLASS="navigation"
+SUMMARY="Navigation header"
+CELLPADDING="2"
+CELLSPACING="2"
+><TR
+VALIGN="middle"
+><TD
+><A
+ACCESSKEY="p"
+HREF="r9.html"
+><IMG
+SRC="left.png"
+WIDTH="24"
+HEIGHT="24"
+BORDER="0"
+ALT="Prev"></A
+></TD
+><TD
+><A
+ACCESSKEY="u"
+HREF="r9.html"
+><IMG
+SRC="up.png"
+WIDTH="24"
+HEIGHT="24"
+BORDER="0"
+ALT="Up"></A
+></TD
+><TD
+><A
+ACCESSKEY="h"
+HREF="hpodder.html"
+><IMG
+SRC="home.png"
+WIDTH="24"
+HEIGHT="24"
+BORDER="0"
+ALT="Home"></A
+></TD
+><TH
+WIDTH="100%"
+align="center"
+>Using the hpodder podcast aggregator</TH
+><TD
+><A
+ACCESSKEY="n"
+HREF="ch.index.html"
+><IMG
+SRC="right.png"
+WIDTH="24"
+HEIGHT="24"
+BORDER="0"
+ALT="Next"></A
+></TD
+></TR
+></TABLE
+><H1
+><A
+NAME="HPODDER.MAN"
+></A
+>hpodder</H1
+><DIV
+CLASS="REFNAMEDIV"
+><A
+NAME="AEN25"
+></A
+><H2
+>Name</H2
+>hpodder&nbsp;--&nbsp;Scan and download podcasts</DIV
+><DIV
+CLASS="REFSYNOPSISDIV"
+><A
+NAME="AEN28"
+></A
+><H2
+>Synopsis</H2
+><P
+><B
+CLASS="COMMAND"
+>hpodder</B
+>  [-d] [<TT
+CLASS="REPLACEABLE"
+><I
+>command</I
+></TT
+>] [<TT
+CLASS="REPLACEABLE"
+><I
+>command_args</I
+></TT
+>]</P
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.DESCRIPTION"
+></A
+><H2
+>Description</H2
+><P
+>      Podcasting
+      is a method of publishing radio-like programs on the
+      Internet.  Through podcasting, almost anyone can produce their
+      own audio program, and publish episodes of it as often or as
+      rarely as they like.
+    </P
+><P
+>      To listen to podcasts, you need a program to download the
+      podcast's episodes from the Internet.  Such a program is
+      called a podcatcher (or sometimes a podcast aggregator).
+      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> is this program.
+    </P
+><P
+>      If you'd like to get going RIGHT NOW, skip on down to the
+      Quick Start section.  Otherwise, let's take a look at the
+      features of <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>.
+    </P
+><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.FEATURES"
+></A
+><H3
+>Feature List</H3
+><P
+></P
+><UL
+><LI
+><P
+>Convenient, easy to learn, and fast command-line
+            interface (it's simple to do simple things, and
+            advanced things are possible)</P
+></LI
+><LI
+><P
+>Automatic discovery of feed metadata such as title</P
+></LI
+><LI
+><P
+>Full history database for accurate
+            prevention of duplicate downloads and tracking of new episodes</P
+></LI
+><LI
+><P
+>Conversion tools to convert your existing
+            feed list and history from other applications to
+            <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>.  Supported applications and formats include:
+            castpodder and ipodder.
+          </P
+></LI
+><LI
+><P
+>Most operations can work fully automatically
+            across your entire podcast database, or they can work
+            manually as well.</P
+></LI
+><LI
+><P
+>Automatic updating of ID3 (v1 and v2) tags
+            based on metadata in the podcast itself.  This important
+            feature is available through iTunes but is often missed by
+            other podcatchers.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> operations can be easily scripted
+            or scheduled using regular operating system tools.</P
+></LI
+><LI
+><P
+>Fully customizable naming scheme for
+            downloaded episodes, including a name collision detection
+            and workaround algorithm.</P
+></LI
+><LI
+><P
+>Automatic support for appending .mp3
+            extensions to MP3 files that lack it.</P
+></LI
+><LI
+><P
+>Numerous database and history inquiry tools</P
+></LI
+><LI
+><P
+>Small, minimalist footprint</P
+></LI
+><LI
+><P
+>Power users and developers can interact
+            directly with the embedded Sqlite3 database used by
+            <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>.  The database has a simple schema that is
+            developer-friendly.</P
+></LI
+><LI
+><P
+>Support for resuming interrupted downloads
+            of podcasts</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> is SAFE and is designed with data
+            integrity in mind from the beginning.  It should be
+            exceedingly difficult to lose a podcast episode, even in the
+            event of a power failure.
+          </P
+></LI
+></UL
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.MO"
+></A
+><H3
+>Method of Operation</H3
+><P
+>        The basic pattern of operation with <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> is to set up
+        each podcast you want to receive.  Each day (or hour, or
+        whatever), <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> will go out and update its database by
+        pulling in the latest episode lists from the podcast feed.
+        Then, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> will proceed to download any episodes that
+        you haven't already downloaded.  After each episode is
+        downloaded, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> will note that fact so it isn't ever
+        downloaded again.
+      </P
+><P
+>        Let's look at this in a bit more detail.
+      </P
+><P
+>        <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> maintains two tables in a database.  One table
+        lists all the podcasts you know about, as well as where the
+        podcast's feed is to be downloaded from.  The feed is a file
+        that the podcast's author publishes.  It lists all the
+        current episodes of the podcast, and some information about
+        them.  Data is added to this table with the <B
+CLASS="COMMAND"
+>hpodder
+          add</B
+> command.
+      </P
+><P
+>        The second table lists each episode for a given podcast,
+        along with the location from which the episode can be
+        downloaded and some other information about the episode
+        (such as its title).  Information in this table is added by
+        <B
+CLASS="COMMAND"
+>hpodder update</B
+> and updated by
+        <B
+CLASS="COMMAND"
+>hpodder download</B
+> or 
+        <B
+CLASS="COMMAND"
+>hpodder catchup</B
+>.
+      </P
+><P
+>        When you first fire up <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>, it will read its
+        configuration file from
+        <TT
+CLASS="FILENAME"
+>~/.hpodder/hpodder.conf</TT
+>.
+        What happens next depends on the command.
+      </P
+><P
+>        For <B
+CLASS="COMMAND"
+>hpodder update</B
+>, the program will read
+        information about all your podcasts.  It will download each
+        feed.  Once it has the feed, it will look at each episode
+        and compare them to the database.  If a given episode is
+        already in the database, it is ignored.  Any new episodes
+        are recorded in the database, and set to Pending so they
+        will be downloaded on the next download run.
+      </P
+><P
+>        For <B
+CLASS="COMMAND"
+>hpodder download</B
+>, the program will
+        read information about all your episodes.  For each episode
+        marked Pending, the program will download the episode.  It
+        will then update the episode's ID3 tags based on the podcast
+        feed.  Finally, it will move the episode in-place
+        atomically.  Only after all that has been done will
+        <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> mark the episode as Downloaded in the database.
+        In this way, no episode is visible to outside tools until it
+        is completely downloaded in its final form, so you can
+        safely play any visible program in your download directory
+        even as downloads are happening.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.QUICKSTART"
+></A
+><H2
+>Quick Start</H2
+><P
+>      This section will describe how a first-time <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> user can
+      get up and running quickly.  It assumes you already have
+      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> compiled or installed on your system.  If not,
+      please follow the instructions in the
+      <TT
+CLASS="FILENAME"
+>INSTALL</TT
+>
+      file in the
+      source distribution.
+    </P
+><P
+>      To get started, simply run <B
+CLASS="COMMAND"
+>hpodder</B
+> at your
+      shell prompt.  <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> will lead you through the first-time
+      configuration -- which is only two questions and completely
+      self-explanatory!
+    </P
+><P
+>      After this, whenever you want to download the latest episodes
+      for your podcast, just run <B
+CLASS="COMMAND"
+>hpodder</B
+> again.
+    </P
+><P
+>      At some point, you'll want to add more podcasts to <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>.
+      To do that, just run a command such as:
+    </P
+><P
+><B
+CLASS="COMMAND"
+>hpodder add
+        <TT
+CLASS="REPLACEABLE"
+><I
+>http://www.example.com/feed.xml</I
+></TT
+></B
+></P
+><P
+>      Just replace the example.com URL here with the real URL of the
+      feed you want to add.  Then run <B
+CLASS="COMMAND"
+>hpodder
+        update</B
+>.  If the podcast you've just added has a
+      whole bunch of episodes, you may not want to download them
+      all.  In that case, run <B
+CLASS="COMMAND"
+>hpodder catchup
+        <TT
+CLASS="REPLACEABLE"
+><I
+>id</I
+></TT
+></B
+>, where
+      <TT
+CLASS="REPLACEABLE"
+><I
+>id</I
+></TT
+> is the podcast number that
+      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> gave your new podcast when you added it.
+    </P
+><P
+>      Again, from here on, you can just run
+      <B
+CLASS="COMMAND"
+>hpodder</B
+> to download all your new episodes.
+    </P
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.OPTIONS"
+></A
+><H2
+>Options</H2
+><P
+>      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> always is invoked with the name of a specific
+      operation, such as <CODE
+CLASS="OPTION"
+>update</CODE
+> or
+      <CODE
+CLASS="OPTION"
+>add</CODE
+>.  In <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>, these operations are
+      called <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>commands</I
+></SPAN
+>.  Each command has its
+      own options, which are given after the command on the
+      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> command line.  A full summary of each command's
+      options is given later in this manual.
+    </P
+><P
+>      You may obtain a list of all commands with <B
+CLASS="COMMAND"
+>hpodder
+        lscommands</B
+>.  Help is available for any individual
+      command with <B
+CLASS="COMMAND"
+>hpodder <TT
+CLASS="REPLACEABLE"
+><I
+>command</I
+></TT
+>
+        --help</B
+>.  Global help is available with
+      <B
+CLASS="COMMAND"
+>hpodder --help</B
+>.
+    </P
+><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.OPTIONS.GLOBAL"
+></A
+><H3
+>Global Option</H3
+><P
+>        This option may be specified <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>before</I
+></SPAN
+> any
+        command.
+      </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN150"><SPAN
+STYLE="white-space: nowrap"
+>-d</SPAN
+>, <SPAN
+STYLE="white-space: nowrap"
+>--debug</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              Enables debugging output.  This verbose output helps you
+              learn what <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> is doing every step of the way and
+              diagnose any problems you may encounter.
+            </P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.COMMANDS"
+></A
+><H2
+>Commands in hpodder</H2
+><P
+>      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> has many different commands.  If you do not specify a
+      command, the <B
+CLASS="COMMAND"
+>fetch</B
+> command is automatically
+      selected for you.  This section will discuss each command in
+      detail.  Note that all commands are case-sensitive and should be
+      <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>given in lowercase</I
+></SPAN
+>.
+    </P
+><P
+>      All commands support the command <CODE
+CLASS="OPTION"
+>--help</CODE
+>.  Running
+      <B
+CLASS="COMMAND"
+>hpodder <TT
+CLASS="REPLACEABLE"
+><I
+>command</I
+></TT
+>
+      --help</B
+> will display information about the command and
+      its options.  Since all commands support this, it won't be
+      explicitly listed for each command below.
+    </P
+><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.ADD"
+></A
+><H3
+>add</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder add</B
+>   <TT
+CLASS="REPLACEABLE"
+><I
+>URL</I
+></TT
+> </P
+><P
+>        This command is used to add a new podcast to <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>.  You
+        can must provide the URL (link) to the podcast you want to add
+        to this command.  For example:
+      </P
+><P
+><B
+CLASS="COMMAND"
+>hpodder add
+      http://soundofhistory.complete.org/files_soh/podcast.xml</B
+></P
+><P
+>        A podcast can be later removed with <B
+CLASS="COMMAND"
+>hpodder
+        rm</B
+>.  You can adjust its URL later with
+        <B
+CLASS="COMMAND"
+>hpodder mv</B
+>.
+      </P
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.CATCHUP"
+></A
+><H3
+>catchup</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder catchup</B
+>  [-n <TT
+CLASS="REPLACEABLE"
+><I
+>number</I
+></TT
+>] [<TT
+CLASS="REPLACEABLE"
+><I
+>castid</I
+></TT
+>...]</P
+><P
+>        Running <B
+CLASS="COMMAND"
+>catchup</B
+> will cause <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> to
+        mark all but the most recent episodes as Skipped.  This will
+        prevent <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> from automatically downloading such
+        episodes.
+      </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN206"><SPAN
+STYLE="white-space: nowrap"
+>-n <TT
+CLASS="REPLACEABLE"
+><I
+>NUM</I
+></TT
+></SPAN
+>, <SPAN
+STYLE="white-space: nowrap"
+>--number-eps=<TT
+CLASS="REPLACEABLE"
+><I
+>NUM</I
+></TT
+></SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              By default, only the single most recent episode is exempted
+              from being "caught up".  If you want to exclude more
+              episodes from being "caught up" -- and thus allow more
+              to be downloaded -- use this option to allow more
+              episodes to remain downloadable.
+            </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN213"><SPAN
+STYLE="white-space: nowrap"
+><TT
+CLASS="REPLACEABLE"
+><I
+>castid ...</I
+></TT
+></SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>By default, this command will operate on all podcasts.  You can limit the podcasts on which it operates with this option.  See specifying podcast IDs later in this manual for more information.</P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.DISABLE"
+></A
+><H3
+>disable</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder disable</B
+>   castid... </P
+><P
+>        This command will flag podcasts as disabled.  Podcasts flagged
+        disabled will be skipped during an <B
+CLASS="COMMAND"
+>update</B
+>,
+        <B
+CLASS="COMMAND"
+>download</B
+>, or <B
+CLASS="COMMAND"
+>fetch</B
+>.
+        They will still participate with all other commands.
+        <B
+CLASS="COMMAND"
+>hpodder lscasts</B
+> will notify you of which
+        podcasts are disabled.
+      </P
+><P
+>        This can be useful if you want to stop following a podcast for
+        awhile, but think you may want to come back to it in the
+        future.  The podcast URL and your download history will remain
+        in the <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> database, unlike with <B
+CLASS="COMMAND"
+>hpodder
+        rm</B
+>.
+      </P
+><P
+>        Disabled podcasts can be re-enabled with <B
+CLASS="COMMAND"
+>hpodder
+        enable</B
+>.
+      </P
+><P
+>        One or more podcast IDs are required; see the section below on
+        specifying podcast IDs for more details.
+      </P
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.DOWNLOAD"
+></A
+><H3
+>download</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder download</B
+>  [<TT
+CLASS="REPLACEABLE"
+><I
+>castid</I
+></TT
+>...]</P
+><P
+>        The <B
+CLASS="COMMAND"
+>download</B
+> command is used to actually
+        perform the download of podcasts to your system.  By default,
+        <B
+CLASS="COMMAND"
+>download</B
+> will download all available
+        episodes.  You can, however, specify only certain podcasts to
+        process; if you do, all available episodes for only those
+        podcasts will be downloaded.
+      </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN253"><SPAN
+STYLE="white-space: nowrap"
+><TT
+CLASS="REPLACEABLE"
+><I
+>castid ...</I
+></TT
+></SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>By default, this command will operate on all podcasts.  You can limit the podcasts on which it operates with this option.  See specifying podcast IDs later in this manual for more information.</P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.ENABLE"
+></A
+><H3
+>enable</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder enable</B
+>   castid... </P
+><P
+>        This command will flag podcasts as enabled.  This is the
+        default state.  See <B
+CLASS="COMMAND"
+>hpodder disable</B
+> for
+        information on manually disabling podcasts and what it means
+        to be disabled.
+      </P
+><P
+>        One or more podcast IDs are required; see the section below on
+        specifying podcast IDs for more details.
+      </P
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.FETCH"
+></A
+><H3
+>fetch</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder fetch</B
+>  [<TT
+CLASS="REPLACEABLE"
+><I
+>castid</I
+></TT
+>...]</P
+><P
+>        The <B
+CLASS="COMMAND"
+>fetch</B
+> is the main worker command for
+        <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>.  It is simply equivolent to <B
+CLASS="COMMAND"
+>hpodder
+        update</B
+> followed by <B
+CLASS="COMMAND"
+>hpodder
+        download</B
+>.  That is, it will scan all podcasts for
+        new episodes, then download any pending episodes.
+      </P
+><P
+>        This command is the default command if no command is given on
+        the <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> command line.
+      </P
+><P
+>        As a special feature, the first time that
+        <B
+CLASS="COMMAND"
+>fetch</B
+> is invoked, it will execute the new
+        user setup procedure.
+      </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN294"><SPAN
+STYLE="white-space: nowrap"
+><TT
+CLASS="REPLACEABLE"
+><I
+>castid ...</I
+></TT
+></SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>By default, this command will operate on all podcasts.  You can limit the podcasts on which it operates with this option.  See specifying podcast IDs later in this manual for more information.</P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.IMPORT-IPODDER"
+></A
+><H3
+>import-ipodder</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder import-ipodder</B
+>  [--from=<TT
+CLASS="REPLACEABLE"
+><I
+>PATH</I
+></TT
+>]</P
+><P
+>        With this command, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> can import both your podcast list
+        and your download history from ipodder or CastPodder.
+        <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> will import all podcasts referenced there, with the
+        exception that any podcasts that are already in <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>'s
+        database will be entirely untouched.
+      </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN316"><SPAN
+STYLE="white-space: nowrap"
+>--from=<TT
+CLASS="REPLACEABLE"
+><I
+>PATH</I
+></TT
+></SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>By default, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> will look for the ipodder
+            database in the <TT
+CLASS="FILENAME"
+>.ipodder</TT
+> directory in
+            the user's home directory.  This may not always be correct:
+            for instance, on non-Unix platforms or when using
+            CastPodder, this directory will be different.  With this
+            option, you can tell <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> where to find the
+            ipodder/CastPodder database.
+            </P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.LSCASTS"
+></A
+><H3
+>lscasts</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder lscasts</B
+>  [-l]</P
+><P
+>        This command will display all podcasts that are configured
+        within <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>.  For each podcast, you will see the podcast
+        ID, the number of pending downloads, the total number of
+        episodes ever seen by <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>, and the title of the podcast.
+      </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN339"><SPAN
+STYLE="white-space: nowrap"
+>-l</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              If you add the <CODE
+CLASS="OPTION"
+>-l</CODE
+> option, then
+          <B
+CLASS="COMMAND"
+>lscasts</B
+> will also display the feed URL
+          for each podcast.
+            </P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.LSCOMMANDS"
+></A
+><H3
+>lscommands</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder lscommands</B
+> </P
+><P
+>        This command will display a list of all available <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>
+        commands along with a brief description of each.
+      </P
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.LSEPISODES"
+></A
+><H3
+>lsepisodes / lseps</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder lsepisodes</B
+>  [-l] [<TT
+CLASS="REPLACEABLE"
+><I
+>castid</I
+></TT
+>...]</P
+><P
+><B
+CLASS="COMMAND"
+>hpodder lseps</B
+>  [-l] [<TT
+CLASS="REPLACEABLE"
+><I
+>castid</I
+></TT
+>...]</P
+><P
+>        The <B
+CLASS="COMMAND"
+>lsepisodes</B
+> command will display a list
+        of every episode known to <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>.  The output will include
+        the ID of the podcast to which the episode belongs, the
+        episode ID, the status of the episode, and the title of the
+        episode.
+      </P
+><P
+>        <B
+CLASS="COMMAND"
+>lseps</B
+> is simply an alias for
+        <B
+CLASS="COMMAND"
+>lsepisodes</B
+> and performs in the same manner.
+      </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN382"><SPAN
+STYLE="white-space: nowrap"
+>-l</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              If you add the <CODE
+CLASS="OPTION"
+>-l</CODE
+> option, then
+          <B
+CLASS="COMMAND"
+>lsepisodes</B
+> includes the download URL for
+          each episode in its output.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN388"><SPAN
+STYLE="white-space: nowrap"
+><TT
+CLASS="REPLACEABLE"
+><I
+>castid ...</I
+></TT
+></SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>By default, this command will operate on all podcasts.  You can limit the podcasts on which it operates with this option.  See specifying podcast IDs later in this manual for more information.</P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.RM"
+></A
+><H3
+>rm</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder rm</B
+>   castid... </P
+><P
+>        This command will remove all knowledge about a given podcast
+        from hpodder, including all entries about that podcast in the
+        episode database.
+      </P
+><P
+>        One or more podcast IDs are required; see the section below on
+        specifying podcast IDs for more details.  Unlike most other
+        <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> commands that accept an empty podcast ID list to
+        mean all podcasts, <B
+CLASS="COMMAND"
+>rm</B
+> does not because of
+        the destructive potential of such a request.
+      </P
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.SETSTATUS"
+></A
+><H3
+>setstatus</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder setstatus</B
+>   --castid=<TT
+CLASS="REPLACEABLE"
+><I
+>ID</I
+></TT
+>   --status=<TT
+CLASS="REPLACEABLE"
+><I
+>STATUS</I
+></TT
+>   epid... </P
+><P
+>        The <B
+CLASS="COMMAND"
+>setstatus</B
+> command is used to manually
+        adjust the status flags on individual episodes.  You can use
+        it to flag individual episodes for downloading (or not).
+      </P
+><P
+>        You must specify at least one episode ID.  <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>Note that
+        the plain IDs given to this command are episode IDs</I
+></SPAN
+>, and not
+        podcast IDs like other commands.
+      </P
+><P
+>        Statuses are case-sensitive and must be given with a leading
+        uppercase letter and trailing lowercase letters.  Available
+        status are given later in this manual.
+      </P
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.SETTITLE"
+></A
+><H3
+>settitle</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder settitle</B
+>   --castid=<TT
+CLASS="REPLACEABLE"
+><I
+>ID</I
+></TT
+>   --title=<TT
+CLASS="REPLACEABLE"
+><I
+>TITLE</I
+></TT
+> </P
+><P
+>        The <B
+CLASS="COMMAND"
+>settitle</B
+> is used to manually set the
+        title of a given podcast.  Normally, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> will
+        automatically get the title from the podcast's XML feed.
+        Sometimes the XML feed for the podcast may not provide a
+        useful title.  In those situations, you can use
+        <B
+CLASS="COMMAND"
+>settitle</B
+> to manually override the title.
+      </P
+><P
+>        Please note that if you want to set the title to a name that
+        contains spaces, you will need to quote it for the shell.
+      </P
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.COMMANDS.UPDATE"
+></A
+><H3
+>update</H3
+><P
+><B
+CLASS="COMMAND"
+>hpodder update</B
+>  [<TT
+CLASS="REPLACEABLE"
+><I
+>castid</I
+></TT
+>...]</P
+><P
+>        The update command will cause <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> to look at each
+        podcast feed.  It will download the latest copy of the feed
+        and compare the episodes mentioned in the feed to its internal
+        database of episodes.  For any episode mentioned in the feed
+        that is not already in the internal database of episodes,
+        <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> will add it to its database and set its status to
+        Pending.
+      </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN464"><SPAN
+STYLE="white-space: nowrap"
+><TT
+CLASS="REPLACEABLE"
+><I
+>castid ...</I
+></TT
+></SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>By default, this command will operate on all podcasts.  You can limit the podcasts on which it operates with this option.  See specifying podcast IDs later in this manual for more information.</P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.CASTIDS"
+></A
+><H2
+>Specifying podcast IDs</H2
+><P
+>      Each podcast in <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> gets a numeric ID.  This ID is
+      automatically assigned by <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> and is not changable.  The
+      ID is given out when a podcast is added with the
+      <B
+CLASS="COMMAND"
+>add</B
+> command, or with the
+      <B
+CLASS="COMMAND"
+>lscasts</B
+> or <B
+CLASS="COMMAND"
+>lsepisodes</B
+>
+      commands.
+    </P
+><P
+>      The ID is designed as a constant way to refer to a particular
+      podcast.  A podcast's title may change, or even its feed URL,
+      but the ID of a podcast will never change.  It also is short and
+      easy to type on the command line.
+    </P
+><P
+>      Several commands can take a list of podcast IDs.  If no IDs are
+      given, the commands will default to operating on all podcasts.
+      One or more IDs can be given, separated by spaces.  If IDs are
+      given, then the commands will operate only on the podcasts with
+      the given IDs.
+    </P
+><P
+>      The special keyword <CODE
+CLASS="OPTION"
+>all</CODE
+> may be given, which
+      tells the system to operate on all podcasts.  This yields the
+      same result as giving no IDs at all.
+    </P
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.STATUSES"
+></A
+><H2
+>Status Flags in hpodder</H2
+><P
+>      Several places in this manual, you've seen <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> statuses
+      mentioned.  Each episode in <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> has an associated status.
+      The statuses are:
+    </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN493"><SPAN
+STYLE="white-space: nowrap"
+>Pending</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The given episode is ready to
+        download</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN497"><SPAN
+STYLE="white-space: nowrap"
+>Downloaded</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The given episode has already been
+        downloaded by <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN502"><SPAN
+STYLE="white-space: nowrap"
+>Error</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>An error occured while downloading this
+        episode.  It will not be downloaded again unless the flag is
+        set back to Pending.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN506"><SPAN
+STYLE="white-space: nowrap"
+>Skipped</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The user has requested that this episode not
+        be downloaded.  Commands such as <B
+CLASS="COMMAND"
+>catchup</B
+> or
+            <B
+CLASS="COMMAND"
+>import-ipodder</B
+> could cause this.
+          </P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.ERROR"
+></A
+><H2
+>Automatic Error Handling</H2
+><P
+>      For whatever reason, podcast feeds or individual episodes sometimes
+      fail to download.  The reasons for this range from the podcast being
+      taken down by its author to the network being disconnected from the
+      local computer.
+    </P
+><P
+>      People that track many podcasts over a long time will probably find it
+      annoying to have <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> attempt to download invalid feeds or
+      episodes over and over again.  For that reason, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> 1.0.0
+      introduced automatic error handling.
+    </P
+><P
+>      Once a podcast feed or episode has failed at least 15 times, 
+      it's been at least 21 days since the first download attempt (episodes)
+      or last update (feeds), <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> will automatically mark the item to
+      be skipped in future runs.  For podcast feeds, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> disabled the
+      podcast; this status will appear in <B
+CLASS="COMMAND"
+>hpodder lscasts</B
+>.
+      For episodes, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> sets the status to Error; this will appear
+      in <B
+CLASS="COMMAND"
+>hpodder lseps</B
+>.  Both can be changed later, with
+      <B
+CLASS="COMMAND"
+>hpodder enable</B
+> or <B
+CLASS="COMMAND"
+>hpodder setstatus</B
+>,
+      respectively.
+    </P
+><P
+>      The default minimums of 15 attempts and 21 days may be adjusted in
+      the <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> configuration file, either globally or on a per-podcast
+      basis.
+    </P
+><P
+>      If you wish to disable checking entirely, you can put lines such as
+      <TT
+CLASS="LITERAL"
+>epfaildays = 123456789</TT
+> and
+      <TT
+CLASS="LITERAL"
+>podcastfaildays = 123456789</TT
+> in your <TT
+CLASS="LITERAL"
+>DEFAULT</TT
+>
+      section in <TT
+CLASS="FILENAME"
+>~/.hpodder/hpodder.conf</TT
+>.  Of course, if you
+      have podcasts that still fail after 338,237 years, you could be in
+      trouble.
+    </P
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.CONFIG"
+></A
+><H2
+>hpodder Configuration File</H2
+><P
+>      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> has a configuration file in which you can set various
+      options.  This file normally lives under
+      <TT
+CLASS="FILENAME"
+>~/.hpodder/hpodder.conf</TT
+>.
+    </P
+><P
+>      The configuration file has multiple sections.  Each section has
+      a name and is introduced with the name in brackets.  Each
+      section has one or more options.
+    </P
+><P
+>      The section named DEFAULT is special in that it provides
+      defaults that will be used whenever an option can't be found
+      under a different section.
+    </P
+><P
+>      Let's start by looking at an example file, and then proceed to
+      examine all the options that are available.
+    </P
+><PRE
+CLASS="PROGRAMLISTING"
+>[DEFAULT]
+
+; Most podcasts are downloaded to here
+downloaddir = /home/jgoerzen/podcasts
+
+namingpatt = %(safecasttitle)s/%(safefilename)s
+
+; Don't disable a podcast due to errors unless it's been at least 20
+; days since the last (or first) attempt
+podcastfaildays = 20
+
+[general]
+
+; The following line tells hpodder that
+; you have already gone through the intro.
+showintro = no
+
+maxthreads = 2
+progressinterval = 1
+
+[31]
+; Store this particular podcast somewhere else
+downloaddir = /nfs/remote/podcasts
+
+; And we don't care as much about disabling it
+podcastfaildays = 5</PRE
+><P
+>      In this example, you saw some "general" options, such as
+      <CODE
+CLASS="OPTION"
+>showintro</CODE
+>.  There are two other sections
+      represented: <CODE
+CLASS="OPTION"
+>31</CODE
+> and <CODE
+CLASS="OPTION"
+>DEFAULT</CODE
+>.
+    </P
+><P
+>      Whenever <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> looks for information about a particular
+      podcast, it first checks to see if it can find that option in a
+      section for that podcast.  If not, it checks the
+      <CODE
+CLASS="OPTION"
+>DEFAULT</CODE
+> section.  If it still doesn't find an
+      answer, it consults its built-in defaults.
+    </P
+><P
+>      In this example, all podcasts share the same naming scheme.  All
+      podcasts except podcast 31 are downloaded to the same place.
+      That podcast goes elsewhere because its
+      <CODE
+CLASS="OPTION"
+>downloaddir</CODE
+> overrides the default.
+    </P
+><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.CONFIG.GENERAL"
+></A
+><H3
+>General Options</H3
+><P
+>These are specified in the <CODE
+CLASS="OPTION"
+>general</CODE
+>
+        section.
+      </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN561"><SPAN
+STYLE="white-space: nowrap"
+>maxthreads</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The maximum number of simultaneous download
+              threads that will be active at any given time.
+              <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> can download multiple files at once, and this
+              options says how many it can download simultaneously.
+              It defaults to 2.
+            </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN566"><SPAN
+STYLE="white-space: nowrap"
+>progressinterval</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>How frequently to update the status bar on
+          the screen, in seconds.  It defaults to 1, which will update
+          the status every second.  Raise it if you are running
+          <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> over a very low-bandwidth link and are concerned
+          about flooding it with status updates.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN571"><SPAN
+STYLE="white-space: nowrap"
+>showintro</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The first time you run
+              <B
+CLASS="COMMAND"
+>fetch</B
+>, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> automatically writes a
+              configuration file for you that sets this option to
+              <CODE
+CLASS="OPTION"
+>no</CODE
+>.  This prevents you from having to
+              do the new user intro more than once.
+            </P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.CONFIG.PODCAST"
+></A
+><H3
+>Per-Podcast Options</H3
+><P
+>        These options may be specified in <CODE
+CLASS="OPTION"
+>DEFAULT</CODE
+> or
+        in a per-podcast section.  If placed in
+        <CODE
+CLASS="OPTION"
+>DEFAULT</CODE
+>, they will apply to all podcasts
+        unless overridden.
+      </P
+><DIV
+CLASS="REFSECT3"
+><A
+NAME="HPODDER.CONFIG.PODCAST.BASIC"
+></A
+><H4
+>Basic Per-Podcast Options</H4
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN586"><SPAN
+STYLE="white-space: nowrap"
+>downloaddir</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The main directory into which all podcasts
+              should be stored.  It will be created by <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> when
+              necessary if it does not already exist.  The default is
+            <TT
+CLASS="FILENAME"
+>~/podcasts</TT
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN592"><SPAN
+STYLE="white-space: nowrap"
+>epfailattempts</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            The minimum number of attempts to download this episode before
+            the episode will be considered to be marked Error.  Default is
+            15.
+          </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN596"><SPAN
+STYLE="white-space: nowrap"
+>epfaildays</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            The minimum number of days that must have elapsed between the
+            first attempt to download the episode and the present time before
+            the episode will be considered to be marked Error.  Default is
+            21.
+            </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN600"><SPAN
+STYLE="white-space: nowrap"
+>namingpatt</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>How to name downloaded files.  This pattern
+          is relative to the <CODE
+CLASS="OPTION"
+>downloaddir</CODE
+>.  The
+          default is
+          <TT
+CLASS="FILENAME"
+>%(safecasttitle)s/%(safefilename)s</TT
+>
+            </P
+><P
+>              This option will be provided with several replaceable
+              tokens.  Tokens have the form
+              <CODE
+CLASS="OPTION"
+>%(<TT
+CLASS="REPLACEABLE"
+><I
+>tokname</I
+></TT
+>)s</CODE
+>.
+              That is, the percent sign, the token name in
+              perenthesis, and then an "s" character.  The tokens made
+              available for this option are:
+            </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN610"><SPAN
+STYLE="white-space: nowrap"
+>castid</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The numeric ID for this
+                podcast</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN614"><SPAN
+STYLE="white-space: nowrap"
+>epid</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The numeric ID for this
+                episode
+                  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN618"><SPAN
+STYLE="white-space: nowrap"
+>safecasttitle</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The title of the podcast, as specified
+                      in the feed.  Special characters, such as spaces or
+                      exclamation marks, are converted to
+                      underscores.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN622"><SPAN
+STYLE="white-space: nowrap"
+>safeeptitle</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The title of this episode, as
+                      specified in the podcast's feed, with special
+                      characters converted to underscores.
+                    </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN626"><SPAN
+STYLE="white-space: nowrap"
+>safefilename</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The component from the URL for this
+                      episode after the last slash in the URL, with special
+                      characters converted to underscores.
+                    </P
+></TD
+></TR
+></TBODY
+></TABLE
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN630"><SPAN
+STYLE="white-space: nowrap"
+>podcastfailattempts</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                The minimum number of attempts to download this podcast before
+                the episode will be considered to be marked disabled.  Default is
+                15.
+              </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN634"><SPAN
+STYLE="white-space: nowrap"
+>podcastfaildays</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                The minimum number of days that must have elapsed between the
+                last successful download of the podcast's feed
+                and the present time before
+                the podcast will be considered to be marked disabled.  Default is
+                21.
+              </P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><DIV
+CLASS="REFSECT3"
+><A
+NAME="HPODDER.CONFIG.PODCAST.PROCESSING"
+></A
+><H4
+>Per-Podcast Command Options</H4
+><P
+>          These are external commands that will be run in certain
+          situations.  For each of the commands, several environment
+          variables are set.  These variables are not pre-sanitized
+          and may contain whitespace or special characters.  
+          <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>Extreme
+          caution must be exercized to properly quote these variables
+          when using them in shell commands or scripts.</I
+></SPAN
+>
+          The following
+          environment variables are set:
+        </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN643"><SPAN
+STYLE="white-space: nowrap"
+>CASTID</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The numeric ID for this podcast</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN647"><SPAN
+STYLE="white-space: nowrap"
+>CASTTITLE</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The title of the podcast,
+            verbatim</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN651"><SPAN
+STYLE="white-space: nowrap"
+>EPFILENAME</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The on-disk filename where this episode
+            has been stored</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN655"><SPAN
+STYLE="white-space: nowrap"
+>EPID</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The numeric epidose ID for this
+            episode</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN659"><SPAN
+STYLE="white-space: nowrap"
+>EPTITLE</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The title of this episode, as specified in
+            the podcast's feed.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN663"><SPAN
+STYLE="white-space: nowrap"
+>EPURL</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The URL of this episode.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN667"><SPAN
+STYLE="white-space: nowrap"
+>FEEDURL</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The URL of the podcast's
+            feed.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN671"><SPAN
+STYLE="white-space: nowrap"
+>SAFECASTTITLE</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The title of the podcast, as specified in
+            the feed.  Special characters, such as spaces or
+            exclamation marks, are converted to
+            underscores.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN675"><SPAN
+STYLE="white-space: nowrap"
+>SAFEEPTITLE</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The title of this episode, as specified in
+            the podcast's feed, with special characters converted to
+            underscores.
+              </P
+></TD
+></TR
+></TBODY
+></TABLE
+><P
+>          Here are the supported commands:
+        </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN681"><SPAN
+STYLE="white-space: nowrap"
+>gettypecommand</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>This command is intended to analyze the
+                content of the file and return the true MIME type of the
+                file, based on the on-disk content.  If this command exits
+                with an error, the MIME type given in the podcast feed will
+                be used.  If you want to always use the MIME type in the
+                podcast feed, you can set this to
+                <TT
+CLASS="LITERAL"
+>/bin/false</TT
+> or the empty string.
+              </P
+><P
+>The default value is: <TT
+CLASS="LITERAL"
+>file -b -i "${EPFILENAME}"</TT
+>
+              </P
+><P
+>                It is expected that this program will write its result
+                to standard output.  The first token of the output is
+                taken to be the MIME type.  The remainder will be
+                discarded.  For instance, for the output
+                <TT
+CLASS="LITERAL"
+>text/x-pascal; charset=us-ascii</TT
+>,
+                the type will be taken to be
+                <TT
+CLASS="LITERAL"
+>text/x-pascal</TT
+>.  If the program
+                exits with a nonzero exit code, its output will not be used.
+              </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN691"><SPAN
+STYLE="white-space: nowrap"
+>postproccommand</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>This command provides a user-configurable
+                post-processing hook for downloaded podcasts.  It is only
+                invoked on files whose type matches the
+                <CODE
+CLASS="OPTION"
+>postproctypes</CODE
+> list.  This command is the
+                very last step in the downloading process.
+              </P
+><P
+>                The default value adds ID3 tags to MP3 files.  It is:
+                <TT
+CLASS="LITERAL"
+>mid3v2 -T "${EPID}" -A "${CASTTITLE}" -t "${EPTITLE}" --WOAF
+                  "${EPURL}" --WOAS "${FEEDURL}" "${EPFILENAME}"</TT
+>
+              </P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><DIV
+CLASS="REFSECT3"
+><A
+NAME="HPODDER.CONFIG.PODCAST.TYPES"
+></A
+><H4
+>Per-Podcast Type Processing Lists</H4
+><P
+>          These options govern what types of files are processed in
+          different ways.  The types used here are MIME types.  They
+          will be the actual type determined by
+          <CODE
+CLASS="OPTION"
+>gettypecommand</CODE
+>, or if that command is
+          unable to determine a useful type, the MIME type given by
+          the podcast's RSS feed.  Items in these lists are to be
+          separated by commas.
+        </P
+><P
+></P
+><TABLE
+CLASS="variablelist"
+BORDER="0"
+CELLSPACING="0"
+CELLPADDING="4"
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN703"><SPAN
+STYLE="white-space: nowrap"
+>postproctypes</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                This is the comma-separated list of MIME types on
+                which <CODE
+CLASS="OPTION"
+>postproccommand</CODE
+> will operate.
+                The special single token <TT
+CLASS="LITERAL"
+>ALL</TT
+> means
+                to operate on all types.  To disable post-processing
+                entirely, you can set this to the empty string.
+                The default is: <TT
+CLASS="LITERAL"
+>audio/mpeg, audio/mp3,
+                x-audio/mp3</TT
+>
+              </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><A
+NAME="AEN710"><SPAN
+STYLE="white-space: nowrap"
+>renametypes</SPAN
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                This option governs the automatic renaming of
+                downloaded files.  Some servers do not present files
+                with proper extensions to match their file type.  This
+                can confuse various software and devices.  <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>
+                can automatically fix up extensions on such files.
+                Each entry in the list in a MIME type, a colon, and
+                the desired filename suffix.  Note that no whitespace
+                is allowed around the colon.
+              </P
+><P
+>                The default is: <TT
+CLASS="LITERAL"
+>audio/mpeg:.mp3,
+                audio/mp3:.mp3, x-audio/mp3:.mp3</TT
+>
+              </P
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.CURL.CONFIG"
+></A
+><H2
+>Curl Configuration File</H2
+><P
+>      Internally, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> uses the Curl application to perform
+      downloads across the Internet.  Curl is a remarkably flexible
+      application, and <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> takes advantage of that to provide
+      you with quite a few options.
+    </P
+><P
+>      You can customize Curl as much as you like by creating a Curl
+      configuration file in <TT
+CLASS="FILENAME"
+>~/.hpodder/curlrc</TT
+>.
+      Please see <SPAN
+CLASS="APPLICATION"
+>curl</SPAN
+>(1) for more details
+      on the content of that file.
+    </P
+><P
+>Some things you can do with this file include restricting
+    the maximum download rate, suppressing or adjusting the progress
+    meter, configuring proxies, etc.
+    </P
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.TIPS"
+></A
+><H2
+>Tips &#38; Hints</H2
+><P
+>      Here are a few tips and hints to make <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> more pleasant
+      for you.
+    </P
+><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.TIPS.PROXY"
+></A
+><H3
+>Going Through a Proxy</H3
+><P
+>        If your connections must go through a proxy, you have two
+        options: set an environment varilable or configure the proxy
+        in your <TT
+CLASS="FILENAME"
+>~/.hpodder/curlrc</TT
+>.  If you use an
+        environment variable, your settings will also impact other
+        applications -- and that's probably what you want.  See the
+        Environment section later for tips on doing that.
+      </P
+></DIV
+><HR><DIV
+CLASS="REFSECT2"
+><A
+NAME="HPODDER.TIPS.RATELIMIT"
+></A
+><H3
+>Limiting Your Download Speed</H3
+><P
+>        Sometimes, you may not want <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> to use all of your
+        available bandwidth.  Perhaps you don't want it to slow down
+        other activities too much.  To do this, just create a
+        <TT
+CLASS="FILENAME"
+>~/.hpodder/curlrc</TT
+> file.  Put in it
+        something like this:
+      </P
+><PRE
+CLASS="PROGRAMLISTING"
+>limit-rate=20k</PRE
+><P
+>        This will limit the download rate to 20 KB/sec.
+      </P
+><P
+>        This rate limitation is imperfect and may not do well during
+        <B
+CLASS="COMMAND"
+>update</B
+>, but it should do exactly what you
+        want during <B
+CLASS="COMMAND"
+>download</B
+>.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.ENVIRONMENT"
+></A
+><H2
+>Environment</H2
+><P
+>      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> does not read any environment variables directly.
+      However, it does pass on the environment to the
+      programs it calls, such as Curl.  This can be useful for
+      specifying proxies.  Please see
+      <SPAN
+CLASS="APPLICATION"
+>curl</SPAN
+>(1) for more details.
+      As specified in the Per-Podcast Command Options section, <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>
+      will also set certain variables for post-processing of
+      downloaded files.
+    </P
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.CONFORMING"
+></A
+><H2
+>Conforming To</H2
+><P
+></P
+><UL
+><LI
+><P
+>The <A
+HREF="http://www.w3.org/XML/"
+TARGET="_top"
+>Extensible Markup Language
+            (XML)</A
+> standard (W3C)</P
+></LI
+><LI
+><P
+><A
+HREF="http://blogs.law.harvard.edu/tech/rss"
+TARGET="_top"
+>RSS 2.0</A
+>
+      (Harvard Law)</P
+></LI
+><LI
+><P
+>HTTP 1.1, FTP, plus SSL/TLS and any other
+      protocols supported by Curl</P
+></LI
+><LI
+><P
+>ID3 v1 and v2</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.COPYRIGHT"
+></A
+><H2
+>Copyright</H2
+><P
+>      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>, all code, documentation, files, and build scripts are
+      Copyright &copy; 2006 John Goerzen.  All code, documentation,
+      sripts, and files are under the following license unless
+      otherwise noted:
+    </P
+><P
+>      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2 of the License, or
+      (at your option) any later version.
+    </P
+><P
+>      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+    </P
+><P
+>      You should have received a copy of the GNU General Public License
+      along with this program; if not, write to the Free Software
+      Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+    </P
+><P
+>      The GNU General Public License is available in the file COPYING
+      in the source distribution.  Debian GNU/Linux users may find this in
+      /usr/share/common-licenses/GPL-2.
+    </P
+><P
+>      If the GPL is unacceptable for your uses, please e-mail me; alternative
+      terms can be negotiated for your project.
+    </P
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="HPODDER.AUTHOR"
+></A
+><H2
+>Author</H2
+><P
+>      <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+>, its modules, documentation, executables, and all
+      included files, except where noted, was written by
+      John Goerzen <CODE
+CLASS="EMAIL"
+>&#60;<A
+HREF="mailto:jgoerzen@complete.org"
+>jgoerzen@complete.org</A
+>&#62;</CODE
+> and
+      copyright is held as stated in the COPYRIGHT section.
+    </P
+></DIV
+><DIV
+CLASS="REFSECT1"
+><A
+NAME="DFS.SEEALSO"
+></A
+><H2
+>See Also</H2
+><P
+>      <SPAN
+CLASS="APPLICATION"
+>curl</SPAN
+>(1),
+      <SPAN
+CLASS="APPLICATION"
+>mid3v2</SPAN
+>(1)
+    </P
+><P
+>      The <SPAN
+CLASS="APPLICATION"
+>hpodder</SPAN
+> homepage at <A
+HREF="http://software.complete.org/hpodder"
+TARGET="_top"
+>http://software.complete.org/hpodder</A
+>,
+      a general description of podcasting at
+      <A
+HREF="http://en.wikipedia.org/wiki/Podcast"
+TARGET="_top"
+>http://en.wikipedia.org/wiki/Podcast</A
+>
+    </P
+></DIV
+><TABLE
+CLASS="navigation"
+WIDTH="100%"
+SUMMARY="Navigation footer"
+CELLPADDING="2"
+CELLSPACING="2"
+><TR
+VALIGN="middle"
+><TD
+ALIGN="left"
+><A
+ACCESSKEY="p"
+HREF="r9.html"
+><B
+>&lt;&lt;&lt;&nbsp;hpodder Manual</B
+></A
+></TD
+><TD
+ALIGN="right"
+><A
+ACCESSKEY="n"
+HREF="ch.index.html"
+><B
+>Index&nbsp;&gt;&gt;&gt;</B
+></A
+></TD
+></TR
+></TABLE
+></BODY
+></HTML
+>
