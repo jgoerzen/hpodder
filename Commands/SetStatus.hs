@@ -57,7 +57,7 @@ cmd_worker gi (args, episodes) = lock $
                       Nothing -> fail "setstatus: --castid required; see hpodder setstatus --help"
        newstatus <- case lookup "status" args of
                       Just x -> E.catch (E.evaluate (read x))
-                                  (\_ -> fail $ "Invalid status supplied; use one of: " ++ possibleStatuses)
+                                  ((\_ -> fail $ "Invalid status supplied; use one of: " ++ possibleStatuses) :: E.SomeException -> IO a)
                       Nothing -> fail "setstatus: --status required; see hpodder setstatus --help"
        podcastlist <- getPodcast (gdbh gi) podcastid
        pc <- case podcastlist of
