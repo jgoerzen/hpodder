@@ -42,6 +42,7 @@ import Data.ConfigFile
 import Data.String.Utils
 import Data.Either.Utils
 import Data.List
+import Data.Char
 import System.Exit
 import Control.Exception
 import Data.Progress.Tracker
@@ -259,10 +260,13 @@ procSuccess gi ep tmpfp =
                  d $ "  gettypecommand sent to stdout: " ++ show c
                  d $ "  original type was: " ++ show (eptype ep)
                  case ec of
-                   ExitSuccess -> case (strip c) of
+                   ExitSuccess -> case (stripToken c) of
                                     "" -> return (eptype ep)
                                     x -> return x
                    _ -> return (eptype ep)
+	
+          stripToken = takeWhile intoken
+              where intoken c = not $ isSpace c || c == ';'
 
           getRenameTypes =
               case getList (gcp gi) idstr "renametypes" of
