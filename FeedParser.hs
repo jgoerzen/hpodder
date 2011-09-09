@@ -79,7 +79,7 @@ parse fp name =
                            (Feed {channeltitle = title, items = feeditems})
        where getContent (Document _ _ e _) = CElem e noPos
 
-unifrob ('\xef':'\xbb':'\xbf':x) = x -- Strip off unicode BOM
+unifrob ('\xfeff':x) = x -- Strip off unicode BOM
 unifrob x = x
 
 unesc = xmlUnEscape stdXmlEscaper
