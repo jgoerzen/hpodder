@@ -1,18 +1,2 @@
 
-Sorry, I need to work on this some more...
-
-PREREQUISITES:
-
- * GHC 6.8              http://www.haskell.org/ghc
- * Curl                 http://curl.haxx.se
- * mid3v2 from Mutagen  http://www.sacredchao.net/quodlibet/wiki/Development/Mutagen
- * hslogger             http://software.complete.org/hslogger
- * MissingH 0.18.0      http://software.complete.org/missingh
-   hpodder also uses these libraries that MissingH also depends upon:
-   FilePath, mtl
- * ConfigFile           http://software.complete.org/configfile
- * Sqlite3              http://www.sqlite.org/
- * HDBC-sqlite3         http://quux.org/devel/hdbc
- * HaXml>=1.13.2        http://www.cs.york.ac.uk/fp/HaXml/
- * HDBC                 http://quux.org/devel/hdbc
-
+Run "cabal install" to fetch all dependencies and build.
