@@ -48,7 +48,7 @@ clean:
 	rm -f build-stamp configure-stamp
 
 	# Add here commands to clean up after the build process.
-	-$(MAKE) clean-code
+	[ ! -f Makefile ] || $(MAKE) clean-code
 	-rm -rf debian/tmp-doc
 
 	dh_clean 

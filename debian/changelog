@@ -1,3 +1,15 @@
+hpodder (1.1.5.0+nmu2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Replace build-depends on xpdf-utils by poppler-utils, to ensure that
+    xpdf-utils is never used (the package is still lurking arround
+    sometimes) (Closes: #549391)
+  * Bump urgency due to RC bug fix
+  * Fix lintian Warning about ignoring errors of make clean
+  * Update Homepage in debian/copyright
+
+ -- Alexander Reichle-Schmehl <tolimar@debian.org>  Fri, 22 Jan 2010 22:39:19 +0100
+
 hpodder (1.1.5.0+nmu1) unstable; urgency=low
 
   * Non-maintainer upload.
