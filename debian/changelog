@@ -1,8 +1,40 @@
-hpodder (1.1.5.1) unstable; urgency=medium
+hpodder (1.1.7.0) unstable; urgency=medium
 
   * Added build-dep on docbook-dsssl to correct unreported FTBFS on arm.
 
  -- John Goerzen <jgoerzen@complete.org>  Tue, 05 Aug 2008 06:29:26 -0500
+
+hpodder (1.1.5.0+nmu3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Replace ghc6 with ghc in build-depends, for GHC 7 transition. (Closes:
+    #629728)
+  * Backport upstream commit 77f4f5eb0365f1722735 for newer HaXml API support
+    (Closes: #622675)
+  * Backport upstream commit 019828ed899dc3580ddc to improve parsing of the
+    output from the gettypecommand
+
+ -- Iain Lane <laney@debian.org>  Sat, 27 Aug 2011 11:32:40 +0100
+
+hpodder (1.1.5.0+nmu2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Replace build-depends on xpdf-utils by poppler-utils, to ensure that
+    xpdf-utils is never used (the package is still lurking arround
+    sometimes) (Closes: #549391)
+  * Bump urgency due to RC bug fix
+  * Fix lintian Warning about ignoring errors of make clean
+  * Update Homepage in debian/copyright
+
+ -- Alexander Reichle-Schmehl <tolimar@debian.org>  Fri, 22 Jan 2010 22:39:19 +0100
+
+hpodder (1.1.5.0+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix FTBFS error "ambiguous type variable" with GHC 6.10. Patch from
+    upstream Git, commit 14bb33b. (Closes: #537028)
+
+ -- Stefano Zacchiroli <zack@debian.org>  Wed, 04 Nov 2009 22:41:33 +0100
 
 hpodder (1.1.5.0) unstable; urgency=low
 
