@@ -39,6 +39,7 @@ import Data.Maybe.Utils
 import Data.Char
 import Data.Either.Utils
 import Data.List
+import System.IO
 
 data Item = Item {itemtitle :: String,
                   itemguid :: Maybe String,
@@ -68,7 +69,8 @@ item2ep pc item =
 
 parse :: FilePath -> String -> IO (Either String Feed)
 parse fp name = 
-    do c <- readFile fp
+    do h <- openBinaryFile fp ReadMode
+       c <- hGetContents h
        case xmlParse' name (unifrob c) of
          Left x -> return (Left x)
          Right y ->
