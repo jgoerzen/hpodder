@@ -1,3 +1,15 @@
+hpodder (1.1.5.0+nmu3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Replace ghc6 with ghc in build-depends, for GHC 7 transition. (Closes:
+    #629728)
+  * Backport upstream commit 77f4f5eb0365f1722735 for newer HaXml API support
+    (Closes: #622675)
+  * Backport upstream commit 019828ed899dc3580ddc to improve parsing of the
+    output from the gettypecommand
+
+ -- Iain Lane <laney@debian.org>  Sat, 27 Aug 2011 11:32:40 +0100
+
 hpodder (1.1.5.0+nmu2) unstable; urgency=medium
 
   * Non-maintainer upload.
