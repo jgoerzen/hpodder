@@ -34,6 +34,7 @@ module Download(startGetURL, finishGetURL, checkDownloadSize, Result(..),
 import System.Cmd.Utils
 import System.Posix.Process
 import Config
+import Utils
 import System.Log.Logger
 import Text.Printf
 import System.Exit
@@ -74,7 +75,7 @@ getCurlConfig =
     do ad <- getAppDir
        return $ ad ++ "/curlrc"
 
-getsize fp = catch (getFileStatus fp >>= (return . Just . fileSize))
+getsize fp = catchSome (getFileStatus fp >>= (return . Just . fileSize))
              (\_ -> return Nothing)
 
 {- | Begin the download process on the given URL.

@@ -83,7 +83,8 @@ lsepisodes_worker gi (opts, casts) =
        when (islong) (printf "            Episode URL\n")
        eps <- mapM (getEpisodes (gdbh gi)) pc
        mapM_ printep (concat eps)
-    where printep ep =
+    where printep :: Episode -> IO ()
+          printep ep =
               do printf "%-5d %-5d %-4s %-60.60s\n" 
                             (castid (podcast ep)) (epid ep) 
                             (take 4 . show $ epstatus ep) (eptitle ep)

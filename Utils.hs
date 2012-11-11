@@ -43,6 +43,7 @@ import System.Time.Utils
 import System.IO
 import System.Posix.IO
 import Control.Exception(finally)
+import qualified Control.Exception as Exc
 
 simpleCmd :: IConnection conn => 
           String -> String -> String -> [OptDescr (String, String)] 
@@ -79,7 +80,7 @@ lock func =
     do appdir <- getAppDir
        lockh <- openFile (appdir ++ "/.lock") WriteMode
        lockfd <- handleToFd lockh
-       catch (placelock lockfd) errorhandler
+       catchSome (placelock lockfd) errorhandler
        r <- finally func (releaselock lockfd)
        return r
 
@@ -120,6 +121,8 @@ filter_disabled = filter (\x -> pcenabled x == PCEnabled)
 emptyDir :: FilePath -> IO ()
 emptyDir fp =
     do dircontents <- getDirectoryContents fp
-       mapM_ (\f -> catch (removeFile $ fp ++ "/" ++ f) (\_ -> return ()))
+       mapM_ (\f -> catchSome (removeFile $ fp ++ "/" ++ f) (\_ -> return ()))
                     dircontents
 
+catchSome :: IO a -> (Exc.SomeException -> IO a) -> IO a
+catchSome = Exc.catch
