@@ -41,6 +41,7 @@ import Data.Maybe.Utils
 import System.Posix.Process
 import Database.HDBC(handleSqlError)
 import Config
+import Utils
 import System.Log.Logger
 import Text.Printf
 import System.Exit
@@ -192,7 +193,7 @@ childthread dqmvar semaphore =
                      do callback x (DLEnded (dltok, status, result, messages))
                         -- Delete the messages file now that we don't
                         -- care about it anymore
-                        catch (removeFile (tokpath dltok ++ ".msg"))
+                        catchSome (removeFile (tokpath dltok ++ ".msg"))
                               (\_ -> return ())
                         return (dq {completedDownloads = 
                                         (x, dltok, result) :

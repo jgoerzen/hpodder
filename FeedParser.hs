@@ -127,7 +127,7 @@ channel =
 attrofelem :: String -> Content Posn -> Maybe AttValue
 attrofelem attrname (CElem inelem _) =
     case unesc inelem of
-      Elem name al _ -> lookup attrname al
+      Elem name al _ -> lookup (N attrname) al
 attrofelem _ _ =
     error "attrofelem: called on something other than a CElem"
 stratt :: String -> Content Posn -> Maybe [String]
