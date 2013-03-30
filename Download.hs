@@ -59,14 +59,15 @@ d = debugM "download"
 i = infoM "download"
 
 curl = "curl"
-curlopts = ["-A", "hpodder v1.0.0; Haskell; GHC", -- Set User-Agent
-            "-s",               -- Silent mode
-            "-S",               -- Still show error messages
-            "-L",               -- Follow redirects
-            "-y", "60", "-Y", "1", -- Timeouts
-            "--retry", "2",     -- Retry twice
-            "--globoff",        -- Disable globbing on URLs (#79)
-            "-f"                -- Fail on server errors
+curlopts = ["--user-agent", "hpodder v1.0.0; Haskell; GHC", -- Set User-Agent
+            "--silent",           -- Silent mode
+            "--show-error",       -- Still show error messages
+            "--location",         -- Follow redirects
+	    "--speed-limit", "1", -- Abort if slower than 1 byte per second
+            "--speed-time", "60", -- over more than 60 seconds
+            "--retry", "2",       -- Retry twice
+            "--globoff",          -- Disable globbing on URLs (#79)
+            "--fail"              -- Fail on server errors
            ]
 
 getCurlConfig :: IO String
