@@ -59,7 +59,7 @@ d = debugM "download"
 i = infoM "download"
 
 curl = "curl"
-curlopts = ["--user-agent", "hpodder v1.0.0; Haskell; GHC", -- Set User-Agent
+curlopts = ["--user-agent", "hpodder v1.1.6; Haskell; GHC",
             "--silent",           -- Silent mode
             "--show-error",       -- Still show error messages
             "--location",         -- Follow redirects
