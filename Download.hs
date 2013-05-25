@@ -87,7 +87,7 @@ startGetURL :: String           -- ^ URL to download
 startGetURL url dirbase allowresume =
     do curlrc <- getCurlConfig
        havecurlrc <- doesFileExist curlrc
-       let curlrcopts = (if havecurlrc then ["-K", curlrc] else [])
+       let curlrcopts = (if havecurlrc then ["-K", curlrc] else ["-q"])
                         ++ (if allowresume then ["-C", "-"] else [])
        let fp = dirbase ++ "/" ++ getdlfname url
        startsize <- getsize fp
@@ -99,7 +99,7 @@ startGetURL url dirbase allowresume =
                 (defaultFileFlags {trunc = True})
        msgfd2 <- dup msgfd
        pid <- pOpen3Raw Nothing (Just msgfd) (Just msgfd2) 
-                 curl (curlopts ++ curlrcopts ++ [url, "-o", fp])
+                 curl (curlrcopts ++ curlopts ++ [url, "-o", fp])
                  (return ())
        closeFd msgfd
        closeFd msgfd2
