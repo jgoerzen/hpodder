@@ -65,6 +65,7 @@ curlopts = ["-A", "hpodder v1.0.0; Haskell; GHC", -- Set User-Agent
             "-L",               -- Follow redirects
             "-y", "60", "-Y", "1", -- Timeouts
             "--retry", "2",     -- Retry twice
+            "--compressed",     -- Support compressed content encodings
             "--globoff",        -- Disable globbing on URLs (#79)
             "-f"                -- Fail on server errors
            ]
